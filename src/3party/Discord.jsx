@@ -9,7 +9,7 @@ const Discord = () => {
   const [user, setUser] = useState({});
   const handleConnect = () => {
     const url =
-      "https://discord.com/api/oauth2/authorize?client_id=1106614720355639349&redirect_uri=http%3A%2F%2F127.0.0.1%3A5173%2F&response_type=code&scope=identify";
+      `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=http%3A%2F%2F127.0.0.1%3A5173%2F&response_type=code&scope=identify`;
     window.location.assign(url);
   };
   const params = new URLSearchParams(window.location.search);
@@ -51,7 +51,7 @@ const Discord = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col space-y-2 w-40">
       <button className="bg-cyan-300" onClick={handleConnect}>
         Connect Discord
       </button>
